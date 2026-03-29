@@ -24,9 +24,9 @@ public class HttpServer {
                 Socket clientSocket = serverSocket.accept();
                 log.info("Connection accepted: " + clientSocket);
                 InputStream inputStream = clientSocket.getInputStream();
-                OutputStream outputStream = clientSocket.getOutputStream();
                 inputStream.read();
                 log.info("Request read" + inputStream);
+                OutputStream outputStream = clientSocket.getOutputStream();
                 outputStream.flush();
                 serverSocket.setSoTimeout(10000);
                 outputStream.close();
